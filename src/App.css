@@ -1,20 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap");
 
 :root {
-  --primary-color: #d7fff1;
-  --secondary-color: #285943;
-  --button-color: #285943;
+  --primary-color: #fcfbf4;
+  --secondary-color: #666a86;
+  --button-color: #2c2e3a;
 
   font-family: "Science Gothic";
 }
 
 .App {
   background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 3fr 4fr;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 input {
@@ -29,9 +32,48 @@ input {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  padding: 32px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px;
+  padding-top: 16px;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.form-section::-webkit-scrollbar {
+  width: 15px;
+}
+.form-section::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
 }
 
 button {
   max-width: fit-content;
+  color: rgb(0, 0, 0);
+  background-color: var(--secondary-color);
+}
+
+button:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header {
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.display-section {
+  border: var(--button-color) solid 2pt;
+  height: 95vh;
+  margin: 24px;
 }

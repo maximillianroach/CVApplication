@@ -6,4 +6,11 @@
 
 * {
   box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
 }

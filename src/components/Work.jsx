@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Plus, Trash2, Check, SquarePen } from "lucide-react";
 
 export default function Work({ entry, setEntry, deleteEntry }) {
   const [isEditing, setIsEditing] = useState(true);
@@ -65,7 +66,9 @@ export default function Work({ entry, setEntry, deleteEntry }) {
               value={entry.description}
               onChange={handleChange}
             ></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit">
+              <Check size={30} />
+            </button>
           </form>
         </div>
       ) : (
@@ -75,8 +78,14 @@ export default function Work({ entry, setEntry, deleteEntry }) {
           <p>{entry.startDate}</p>
           <p>{entry.endDate}</p>
           <p>{entry.description}</p>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={() => deleteEntry(entry.id)}>Delete</button>
+          <div className="submit-edit-buttons">
+            <button onClick={() => setIsEditing(true)}>
+              <SquarePen size={30} />
+            </button>
+            <button onClick={() => deleteEntry(entry.id)}>
+              <Trash2 size={30} />
+            </button>
+          </div>
         </div>
       )}
     </>

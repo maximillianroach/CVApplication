@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Plus, Trash2, Check, SquarePen } from "lucide-react";
 
 export default function General({ headerInfo, setHeaderInfo }) {
   const [isEditing, setIsEditing] = useState(true);
@@ -64,7 +65,9 @@ export default function General({ headerInfo, setHeaderInfo }) {
             onChange={handleChange}
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit">
+            <Check size={30} />
+          </button>
         </form>
       ) : (
         <div>
@@ -78,7 +81,7 @@ export default function General({ headerInfo, setHeaderInfo }) {
               setIsEditing(true);
             }}
           >
-            Edit
+            <SquarePen size={30} />
           </button>
         </div>
       )}

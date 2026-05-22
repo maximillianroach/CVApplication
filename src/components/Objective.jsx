@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Plus, Trash2, Check, SquarePen } from "lucide-react";
 
 export default function Objective({ objectiveText, setObjectiveText }) {
   const [isEditing, setIsEditing] = useState(true);
@@ -25,7 +26,9 @@ export default function Objective({ objectiveText, setObjectiveText }) {
               value={objectiveText}
               onChange={handleChange}
             ></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit">
+              <Check size={30} />
+            </button>
           </form>
         </div>
       ) : (
@@ -37,7 +40,7 @@ export default function Objective({ objectiveText, setObjectiveText }) {
               setIsEditing(true);
             }}
           >
-            Edit
+            <SquarePen size={30} />
           </button>
         </div>
       )}

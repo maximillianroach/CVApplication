@@ -5,7 +5,7 @@ import Objective from "./components/Objective";
 import Work from "./components/Work";
 import "./App.css";
 import { Icon } from "@mdi/react";
-import { Plus, Trash2, Search } from "lucide-react";
+import { Plus, Trash2, Check } from "lucide-react";
 
 export default function App() {
   const [headerInfo, setHeaderInfo] = useState({
@@ -99,49 +99,52 @@ export default function App() {
   return (
     <>
       <div className="App">
-        <div className="general-section">
-          <General headerInfo={headerInfo} setHeaderInfo={setHeaderInfo} />
+        <div className="form-section">
+          <h1 className="header">CV Application Builder</h1>
+          <div className="general-section">
+            <General headerInfo={headerInfo} setHeaderInfo={setHeaderInfo} />
+          </div>
+          <div className="objective-section">
+            <Objective
+              objectiveText={objectiveText}
+              setObjectiveText={setObjectiveText}
+            />
+          </div>
+          <div className="education-section">
+            <h3>Education</h3>
+            {educationEntries.map((entry) => {
+              return (
+                <Education
+                  key={entry.id}
+                  entry={entry}
+                  setEntry={updateEducationEntry}
+                  deleteEntry={deleteEducationEntry}
+                />
+              );
+            })}
+            <button onClick={() => addEducationEntry()}>
+              <Plus size={30} />
+            </button>
+          </div>
+          <div className="work-section">
+            <h3>Work Experience</h3>
+            {workEntries.map((entry) => {
+              return (
+                <Work
+                  key={entry.id}
+                  entry={entry}
+                  setEntry={updateWorkEntry}
+                  deleteEntry={deleteWorkEntry}
+                />
+              );
+            })}
+            <button onClick={() => addWorkEntry()}>
+              <Plus size={30} />
+            </button>
+          </div>
         </div>
-        <div className="objective-section">
-          <Objective
-            objectiveText={objectiveText}
-            setObjectiveText={setObjectiveText}
-          />
-        </div>
-        <div className="education-section">
-          <h3>Education</h3>
-          {educationEntries.map((entry) => {
-            return (
-              <Education
-                key={entry.id}
-                entry={entry}
-                setEntry={updateEducationEntry}
-                deleteEntry={deleteEducationEntry}
-              />
-            );
-          })}
-          <button onClick={() => addEducationEntry()}>
-            <Plus size={20} />
-          </button>
-        </div>
-        <div className="work-section">
-          <h3>Work Experience</h3>
-          {workEntries.map((entry) => {
-            return (
-              <Work
-                key={entry.id}
-                entry={entry}
-                setEntry={updateWorkEntry}
-                deleteEntry={deleteWorkEntry}
-              />
-            );
-          })}
-          <button onClick={() => addWorkEntry()}>
-            <Plus size={20} />
-          </button>
-        </div>
+        <div className="display-section"></div>
       </div>
-      <div className="Display"></div>
     </>
   );
 }

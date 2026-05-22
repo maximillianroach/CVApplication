@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Plus, Trash2, Check, SquarePen } from "lucide-react";
 
 export default function Education({ entry, setEntry, deleteEntry }) {
   const [isEditing, setIsEditing] = useState(true);
@@ -67,7 +68,9 @@ export default function Education({ entry, setEntry, deleteEntry }) {
             value={entry.endDate}
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <button type="submit">
+            <Check size={30} />
+          </button>
         </form>
       ) : (
         <div>
@@ -76,8 +79,14 @@ export default function Education({ entry, setEntry, deleteEntry }) {
           <p>{entry.fieldOfStudy}</p>
           <p>{entry.startDate}</p>
           <p>{entry.endDate}</p>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={() => deleteEntry(entry.id)}>Delete</button>
+          <div className="submit-edit-buttons">
+            <button onClick={() => setIsEditing(true)}>
+              <SquarePen size={30} />
+            </button>
+            <button onClick={() => deleteEntry(entry.id)}>
+              <Trash2 size={30} />
+            </button>
+          </div>
         </div>
       )}
     </>
