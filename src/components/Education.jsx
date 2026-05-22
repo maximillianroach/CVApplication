@@ -18,7 +18,7 @@ export default function Education({ entry, setEntry, deleteEntry }) {
   return (
     <>
       {isEditing ? (
-        <form onSubmit={handleSubmit}>
+        <form className="fade-in" onSubmit={handleSubmit}>
           <label htmlFor="schoolName">School Name</label>
           <input
             type="text"
@@ -73,7 +73,7 @@ export default function Education({ entry, setEntry, deleteEntry }) {
           </button>
         </form>
       ) : (
-        <div>
+        <div className="fade-in">
           <p>{entry.schoolName}</p>
           <p>{entry.degree}</p>
           <p>{entry.fieldOfStudy}</p>

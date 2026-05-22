@@ -19,7 +19,7 @@ export default function Objective({ objectiveText, setObjectiveText }) {
     <>
       {isEditing ? (
         <div>
-          <form onSubmit={handleSubmit}>
+          <form className="fade-in" onSubmit={handleSubmit}>
             <label htmlFor="objective">Objective</label>
             <textarea
               id="objective"
@@ -32,7 +32,7 @@ export default function Objective({ objectiveText, setObjectiveText }) {
           </form>
         </div>
       ) : (
-        <div>
+        <div className="fade-in">
           <h3>Objective</h3>
           <p>{objectiveText}</p>
           <button

@@ -106,7 +106,11 @@ export default function App() {
         <div className="form-section">
           <h1 className="header">CV Application Builder</h1>
           <div className="general-section">
-            <General headerInfo={headerInfo} setHeaderInfo={setHeaderInfo} />
+            <General
+              className="fade-in"
+              headerInfo={headerInfo}
+              setHeaderInfo={setHeaderInfo}
+            />
           </div>
           <div className="objective-section">
             <Objective

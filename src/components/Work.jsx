@@ -18,7 +18,7 @@ export default function Work({ entry, setEntry, deleteEntry }) {
     <>
       {isEditing ? (
         <div>
-          <form onSubmit={handleSubmit}>
+          <form className="fade-in" onSubmit={handleSubmit}>
             <label htmlFor="company">Company</label>
             <input
               type="text"
@@ -72,7 +72,7 @@ export default function Work({ entry, setEntry, deleteEntry }) {
           </form>
         </div>
       ) : (
-        <div>
+        <div className="fade-in">
           <p>{entry.company}</p>
           <p>{entry.title}</p>
           <p>{entry.startDate}</p>

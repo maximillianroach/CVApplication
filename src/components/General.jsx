@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, Trash2, Check, SquarePen } from "lucide-react";
+import "../App.css";
 
 export default function General({ headerInfo, setHeaderInfo }) {
   const [isEditing, setIsEditing] = useState(true);
@@ -24,7 +25,7 @@ export default function General({ headerInfo, setHeaderInfo }) {
   return (
     <>
       {isEditing ? (
-        <form onSubmit={handleSubmit}>
+        <form className="fade-in" onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -70,7 +71,7 @@ export default function General({ headerInfo, setHeaderInfo }) {
           </button>
         </form>
       ) : (
-        <div>
+        <div className="fade-in">
           <h3>General Information</h3>
           <p>{headerInfo.name}</p>
           <p>{headerInfo.email}</p>
