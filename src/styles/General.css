@@ -1,5 +1,9 @@
-form {
+.headerInformation {
   display: flex;
-  flex-direction: column;
-  background-color:;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.headerName {
+  text-align: center;
 }

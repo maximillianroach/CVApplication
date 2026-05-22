@@ -3,6 +3,10 @@ import General from "./components/General";
 import Education from "./components/Education";
 import Objective from "./components/Objective";
 import Work from "./components/Work";
+import GeneralDisplay from "./components/GeneralDisplay";
+import ObjectiveDisplay from "./components/ObjectiveDisplay";
+import EducationDisplay from "./components/EducationDisplay";
+import WorkDisplay from "./components/WorkDisplay";
 import "./App.css";
 import { Icon } from "@mdi/react";
 import { Plus, Trash2, Check } from "lucide-react";
@@ -143,7 +147,12 @@ export default function App() {
             </button>
           </div>
         </div>
-        <div className="display-section"></div>
+        <div className="display-section">
+          <GeneralDisplay headerInfo={headerInfo} />
+          <ObjectiveDisplay objectiveText={objectiveText} />
+          <EducationDisplay educationEntries={educationEntries} />
+          <WorkDisplay workEntries={workEntries} />
+        </div>
       </div>
     </>
   );

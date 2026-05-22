@@ -9,7 +9,7 @@ export default function Objective({ objectiveText, setObjectiveText }) {
     setIsEditing(false);
   };
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     const text = e.target.value;
 
     setObjectiveText(text);
